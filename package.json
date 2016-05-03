@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "description": "This is the repository for the Angular2 Workshop",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "https://angular-training.visualstudio.com/defaultcollection/_git/NG2-Workshop"
@@ -32,5 +29,13 @@
     "lite-server": "^2.2.0",
     "typescript": "^1.8.10",
     "typings": "^0.8.1"
+  },
+  "scripts": {
+    "start": "tsc && concurrently \"npm run tsc:w\" \"npm run lite\" ",
+    "tsc": "tsc",
+    "tsc:w": "tsc -w",
+    "lite": "lite-server",
+    "typings": "typings",
+    "postinstall": "typings install"
   }
 }
