@@ -1,0 +1,36 @@
+{
+  "name": "ng2-workshop",
+  "version": "1.0.0",
+  "description": "This is the repository for the Angular2 Workshop",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://angular-training.visualstudio.com/defaultcollection/_git/NG2-Workshop"
+  },
+  "keywords": [
+    "ng2",
+    "angular",
+    "angular2",
+    "spa",
+    "typescript"
+  ],
+  "author": "Tiberiu Covaci",
+  "license": "MIT",
+  "dependencies": {
+    "angular2": "^2.0.0-beta.17",
+    "es6-shim": "^0.35.0",
+    "reflect-metadata": "^0.1.3",
+    "rxjs": "^5.0.0-beta.7",
+    "systemjs": "^0.19.27",
+    "zone.js": "^0.6.12"
+  },
+  "devDependencies": {
+    "concurrently": "^2.0.0",
+    "lite-server": "^2.2.0",
+    "typescript": "^1.8.10",
+    "typings": "^0.8.1"
+  }
+}
