@@ -246,3 +246,6 @@ ModelManifest.xml
 
 # The typings folder 
 typings/
+
+app/**/*.js
+app/**/*.js.map
