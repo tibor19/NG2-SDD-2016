@@ -3,7 +3,6 @@ import {IRecipe, RecipeService} from './recipe.service';
 import {ImagePipeTransform} from '../pipes/image';
 
 @Component({
-    selector: 'weekly-menu',
     templateUrl : './app/recipe/weekly-menu.component.html',
     pipes: [ImagePipeTransform]
 })
