@@ -39,6 +39,7 @@ export class RecipeService {
     }
 
     getRecipe(id: number): IRecipe {
+        console.log("Got a request for recipe with Id: " + id);
         return {
             "recipeId": 1,
             "name": "Fish sticks and Rice",
