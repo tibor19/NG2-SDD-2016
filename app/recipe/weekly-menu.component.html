@@ -1,8 +1,8 @@
 <h2>{{title}}</h2>
 <div class="box" *ngFor="let recipe of recipes; let odd = odd; let even = even"> 
-  <a href="#/recipe/1">
+  <a href="#/recipe/{{recipe.recipeId}}">
     <div class="box-content" [ngClass]="{'float-right': even, 'float-left': odd}">
-      <h2>Monday</h2>
+      <h2>{{recipe.dayOfWeek}}</h2>
       <h4>{{recipe.name}}</h4>
     </div>
     <div class="box-image" [ngClass]="{'float-left': even, 'float-right': odd}">

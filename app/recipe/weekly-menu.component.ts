@@ -6,8 +6,7 @@ interface IRecipe {
     price: number;
     time: number;
     image: string;
-    recipeIngredients: any[];
-    recipeInstructions: any[];
+    dayOfWeek: string;
 }
 
 @Component({
@@ -15,6 +14,7 @@ interface IRecipe {
     templateUrl : './app/recipe/weekly-menu.component.html' 
 })
 export class WeeklyMenuComponent{
+    private daysOfWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
     title = 'Weekly Menu';
     recipes : IRecipe[] = [{
         "recipeId": 1,
@@ -22,15 +22,16 @@ export class WeeklyMenuComponent{
         "price": 2.0,
         "time": 20,
         "image": "fishsticks-mine",
-        "recipeIngredients": [],
-        "recipeInstructions": []
+        "dayOfWeek": ""
     }, {
         "recipeId": 2,
         "name": "Pizza",
         "price": 13.0,
         "time": 30,
         "image": "pizza-clip",
-        "recipeIngredients": [],
-        "recipeInstructions": []
-    }];
+        "dayOfWeek": ""
+    }].map((r, i) => {
+        r.dayOfWeek = this.daysOfWeek[i%this.daysOfWeek.length];
+        return r;
+    });
 }
