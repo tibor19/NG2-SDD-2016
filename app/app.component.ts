@@ -4,7 +4,7 @@ import {WeeklyMenuComponent} from './recipe/weekly-menu.component';
 @Component({
     selector : 'recipe-app',
     templateUrl : './app/app.component.html',
-    directives: [WeeklyMenuComponent] 
+    directives: [WeeklyMenuComponent]
 })
 export class AppComponent {
     
