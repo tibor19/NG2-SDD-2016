@@ -3,20 +3,15 @@ import {IRecipe, RecipeService} from './recipe.service';
 
 @Component({
     selector: 'weekly-menu',
-    templateUrl : './app/recipe/weekly-menu.component.html' 
+    templateUrl : './app/recipe/weekly-menu.component.html',
+    providers: [RecipeService]  
 })
 export class WeeklyMenuComponent implements OnInit {
     private daysOfWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
     title = 'Weekly Menu';
     recipes : IRecipe[];
     
-    recipeService: RecipeService;
-    
-    /**
-     *
-     */
-    constructor() {
-        this.recipeService = new RecipeService();
+    constructor(private recipeService: RecipeService) {
     }
     
     ngOnInit(){
@@ -24,6 +19,5 @@ export class WeeklyMenuComponent implements OnInit {
             r.dayOfWeek = this.daysOfWeek[i%this.daysOfWeek.length];
             return r;
         });
-
     }
 }
