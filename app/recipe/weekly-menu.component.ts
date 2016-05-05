@@ -3,8 +3,7 @@ import {IRecipe, RecipeService} from './recipe.service';
 
 @Component({
     selector: 'weekly-menu',
-    templateUrl : './app/recipe/weekly-menu.component.html',
-    providers: [RecipeService]  
+    templateUrl : './app/recipe/weekly-menu.component.html'
 })
 export class WeeklyMenuComponent implements OnInit {
     private daysOfWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];

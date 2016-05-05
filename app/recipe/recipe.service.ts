@@ -1,3 +1,5 @@
+import {Injectable} from 'angular2/core';
+
 export interface IRecipe {
     recipeId: number;
     name: string;
@@ -6,7 +8,7 @@ export interface IRecipe {
     image: string;
     dayOfWeek: string;
 }
-
+@Injectable()
 export class RecipeService {
     
     getRecipes() : IRecipe[] {
