@@ -1,13 +1,20 @@
 import {Component} from 'angular2/core';
-import {Router, OnActivate, CanReuse, ComponentInstruction} from 'angular2/router';
+import {Router, OnActivate, CanReuse, ComponentInstruction, RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 
 import {IRecipe, RecipeService} from './recipe.service';
+import {RecipeDetailsComponent} from './recipe.details.component';
+import {RecipeEditComponent} from './recipe.edit.component';
 import {ImagePipeTransform} from '../pipes/image';
 
 @Component({
     templateUrl : './app/recipe/recipe.component.html',
+    directives: [ROUTER_DIRECTIVES],
     pipes: [ImagePipeTransform]
 })
+@RouteConfig([
+  { path: '/', name: 'Details', component: RecipeDetailsComponent },
+  { path: '/edit', name: 'Edit', component: RecipeEditComponent }    
+])
 export class RecipeComponent implements OnActivate, CanReuse {
     recipe: IRecipe;
     
