@@ -24,9 +24,9 @@ import {HomeComponent} from './home.component';
     `] 
 })
 @RouteConfig([
-  { path: '/home', name: 'Home', component: HomeComponent, useAsDefault: true },
+  { path: '/', name: 'Home', component: HomeComponent, useAsDefault: true },
   { path: '/weekly-menu', name: 'WeeklyMenu', component: WeeklyMenuComponent },
-  { path: '/recipe/:id', name: 'Recipe', component: RecipeComponent }    
+  { path: '/recipe/:id/...', name: 'Recipe', component: RecipeComponent }    
 ])
 export class AppComponent {
     

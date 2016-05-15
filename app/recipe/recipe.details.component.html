@@ -1,0 +1,34 @@
+<div>
+    <div class="box">
+        <div class="box-content float-right">
+            <table>
+                <tr>
+                    <td class="style_bold">Price:</td>
+                    <td>{{recipe.price | currency}}</td>
+                </tr>
+                <tr>
+                    <td class="style_bold">Cooking Time:</td>
+                    <td>{{recipe.time}} minutes</td>
+                </tr>
+            </table>
+        </div>
+        <div class="box-image float-left">
+            <img class="recipe-image" [src]="recipe.image | image" [alt]="recipe.name" />
+        </div>
+    </div>
+    <h3>Ingredients</h3>
+    <ul class="ingredientsList">
+        <li>2 Portions of Fish sticks</li>
+        <li>2 Portions of Rice</li>
+        <li>Mayonaise</li>
+        <li>Water</li>
+    </ul>
+    <h3>Instructions</h3>
+    <ol>
+        <li>Follow instructions on rice package to make rice</li>
+        <li>Fry fish sticks</li>
+        <li>Plate and serve with mayo</li>
+    </ol>
+</div>
+
+<button (click)="edit()">Edit</button>
