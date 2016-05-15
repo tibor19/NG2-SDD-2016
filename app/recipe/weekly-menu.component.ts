@@ -2,11 +2,9 @@ import {Component, OnInit} from 'angular2/core';
 import { ROUTER_DIRECTIVES } from 'angular2/router';
 
 import {IRecipe, RecipeService} from './recipe.service';
-import {ImagePipeTransform} from '../pipes/image';
 
 @Component({
     templateUrl : './app/recipe/weekly-menu.component.html',
-    pipes: [ImagePipeTransform],
     directives: [ROUTER_DIRECTIVES]
 })
 export class WeeklyMenuComponent implements OnInit {
