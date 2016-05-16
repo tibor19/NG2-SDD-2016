@@ -6,8 +6,7 @@ import {IRecipe, RecipeService} from './recipe.service';
     moduleId: module.id,
     selector: 'weekly-menu',
     templateUrl: 'weekly-menu.component.html',
-    pipes: [ImagePipeTransform],
-    providers: [RecipeService]    
+    pipes: [ImagePipeTransform]   
 })
 export class WeeklyMenuComponent implements OnInit {
     
