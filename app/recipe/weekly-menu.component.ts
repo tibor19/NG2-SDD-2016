@@ -6,7 +6,8 @@ import {IRecipe, RecipeService} from './recipe.service';
     moduleId: module.id,
     selector: 'weekly-menu',
     templateUrl: 'weekly-menu.component.html',
-    pipes: [ImagePipeTransform]    
+    pipes: [ImagePipeTransform],
+    providers: [RecipeService]    
 })
 export class WeeklyMenuComponent implements OnInit {
     
@@ -14,16 +15,17 @@ export class WeeklyMenuComponent implements OnInit {
     
     title : string = 'Weekly menu';
     recipes : IRecipe[];
-    constructor() {
+
+    constructor(private recipeService : RecipeService) {
     }
     
     ngOnInit(){
-        let svc = new RecipeService();
-        this.recipes = svc.getRecipes();
+        
+        this.recipes = this.recipeService.getRecipes();
+        //         ).map((r: IRecipe, i: number) => {
+        //             r.dayOfWeek = this.daysOfWeek[i%this.daysOfWeek.length]; 
+        //             return r;
+        //         })
     }
     
-//         ).map((r: IRecipe, i: number) => {
-//             r.dayOfWeek = this.daysOfWeek[i%this.daysOfWeek.length]; 
-//             return r;
-//         })
 }
