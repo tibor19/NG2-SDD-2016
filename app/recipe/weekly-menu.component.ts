@@ -1,4 +1,6 @@
 import {Component, OnInit} from 'angular2/core';
+import {OnActivate, ComponentInstruction} from 'angular2/router';
+
 import {ImagePipeTransform} from '../pipes/ImagePipeTransform';
 import {IRecipe, RecipeService} from './recipe.service';
 
@@ -7,7 +9,7 @@ import {IRecipe, RecipeService} from './recipe.service';
     templateUrl: 'weekly-menu.component.html',
     pipes: [ImagePipeTransform]   
 })
-export class WeeklyMenuComponent implements OnInit {
+export class WeeklyMenuComponent implements OnActivate {
     
     daysOfWeek = ['Monday', 'Tuesday', 'Wednesday'];
     
@@ -17,7 +19,7 @@ export class WeeklyMenuComponent implements OnInit {
     constructor(private recipeService : RecipeService) {
     }
     
-    ngOnInit(){
+    routerOnActivate(nextInstruction : ComponentInstruction, prevInstruction: ComponentInstruction){
         
         this.recipes = this.recipeService.getRecipes();
         //         ).map((r: IRecipe, i: number) => {
