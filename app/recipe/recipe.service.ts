@@ -23,4 +23,24 @@ export class RecipeService {
         return this.http.get('/Artifacts/data/recipies.json')
             .map(r => r.json()).toPromise();
     }
+    
+    getRecipe(id: number): Promise<IRecipe[]> {
+        console.log(id);
+        return this.http.get('/Artifacts/data/recipe.json')
+            .map(r => r.json()).toPromise();
+    }
+    
+    saveRecipe(recipe : IRecipe) : Promise<IRecipe>{
+        // remember to call subsacribe or to call to promise
+        //  in order to trigger the http call
+        if(recipe.recipeId > 0){
+            return this.http.put('url with id', JSON.stringify(recipe))
+                .map(r=>r.json()).toPromise();
+        }
+        else{
+            return this.http.post('url without id', JSON.stringify(recipe))
+                .map(r=>r.json()).toPromise();
+            
+        }
+    }
 }

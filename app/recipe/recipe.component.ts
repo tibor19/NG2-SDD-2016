@@ -3,6 +3,7 @@ import {OnActivate, ComponentInstruction, RouteParams, RouteConfig, ROUTER_DIREC
 
 import {RecipeDetailsComponent} from './recipe-details.component';
 import {RecipeEditComponent} from './recipe-edit.component';
+import {RecipeService} from './recipe.service';
 
 @Component({
     moduleId: module.id,
@@ -15,7 +16,7 @@ import {RecipeEditComponent} from './recipe-edit.component';
 ])
 export class RecipeComponent{
     
-    constructor(private routeParams: RouteParams){
+    constructor(private routeParams: RouteParams, private recipeService : RecipeService){
         console.log(routeParams.params['id']);
     }
     
@@ -26,6 +27,7 @@ export class RecipeComponent{
             recipeId = Math.floor(Math.random() * 8) + 1;
         }
         
+        this.recipeService.getRecipe(recipeId).then(r=>console.log(r));
         // Get the recipe
     }
     
