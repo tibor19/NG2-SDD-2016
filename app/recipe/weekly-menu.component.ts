@@ -1,14 +1,6 @@
-import {Component} from 'angular2/core';
+import {Component, OnInit} from 'angular2/core';
 import {ImagePipeTransform} from '../pipes/ImagePipeTransform';
-
-interface IRecipe{
-    recipeId : number;
-    name: string;
-    price: number;
-    time: number;
-    image? : string;
-    dayOfWeek? : string;
-}
+import {IRecipe, RecipeService} from './recipe.service';
 
 @Component({
     moduleId: module.id,
@@ -16,32 +8,20 @@ interface IRecipe{
     templateUrl: 'weekly-menu.component.html',
     pipes: [ImagePipeTransform]    
 })
-export class WeeklyMenuComponent {
+export class WeeklyMenuComponent implements OnInit {
     
     daysOfWeek = ['Monday', 'Tuesday', 'Wednesday'];
     
     title : string = 'Weekly menu';
+    recipes : IRecipe[];
+    constructor() {
+    }
     
-    recipes : IRecipe[] = [{
-            "recipeId": 1,
-            "name": "Fish sticks and Rice",
-            "price": 2.0,
-            "time": 20,
-            "image": "fishsticks-mine"
-        }, {
-            "recipeId": 2,
-            "name": "Pizza",
-            "price": 13.0,
-            "time": 30,
-            "image": "pizza-clip"
-        }, {
-            "recipeId": 3,
-            "name": "Pasta with Meatsauce",
-            "price": 3.0,
-            "time": 11,
-            "image": "pasta-clip"
-        }];
-
+    ngOnInit(){
+        let svc = new RecipeService();
+        this.recipes = svc.getRecipes();
+    }
+    
 //         ).map((r: IRecipe, i: number) => {
 //             r.dayOfWeek = this.daysOfWeek[i%this.daysOfWeek.length]; 
 //             return r;
