@@ -3,7 +3,7 @@
     <h2>{{title}}</h2>
     
     <div class="box" *ngFor="let recipe of recipes; let index = index; let odd = odd; let even = even">
-        <a href="#/recipe/{{recipe.recipeId}}">
+        <a [routerLink]="['Recipe', {id: recipe.recipeId}]">
             <div class="box-content" [ngClass]="{'float-right':even, 'float-left':odd}">
                 <h2>{{daysOfWeek[index % daysOfWeek.length]}}</h2>
                 <h4>{{recipe.name}}</h4>

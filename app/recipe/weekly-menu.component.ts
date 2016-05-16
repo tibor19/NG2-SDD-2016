@@ -1,5 +1,5 @@
 import {Component, OnInit} from 'angular2/core';
-import {OnActivate, ComponentInstruction} from 'angular2/router';
+import {OnActivate, ComponentInstruction, RouterLink} from 'angular2/router';
 
 import {ImagePipeTransform} from '../pipes/ImagePipeTransform';
 import {IRecipe, RecipeService} from './recipe.service';
@@ -7,7 +7,8 @@ import {IRecipe, RecipeService} from './recipe.service';
 @Component({
     moduleId: module.id,
     templateUrl: 'weekly-menu.component.html',
-    pipes: [ImagePipeTransform]   
+    pipes: [ImagePipeTransform],
+    directives: [RouterLink]   
 })
 export class WeeklyMenuComponent implements OnActivate {
     
