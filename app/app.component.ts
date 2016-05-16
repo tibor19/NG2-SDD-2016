@@ -1,9 +1,10 @@
 import {Component} from 'angular2/core';
-import {SecondComponent} from './second.component'
+import {SecondComponent} from './second.component';
 
 @Component({
+    moduleId: module.id,
     selector : 'recipe-app',
-    templateUrl : './app/app.component.html',
+    templateUrl : 'app.component.html',
     directives: [SecondComponent] 
 })
 export class AppComponent {
