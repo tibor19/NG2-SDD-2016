@@ -16,7 +16,7 @@ import {HomeComponent} from './home.component';
 @RouteConfig([
     {name: 'Home', path: '/', component: HomeComponent, useAsDefault: true},
     {name: 'WeeklyMenu', path: '/weekly-menu', component: WeeklyMenuComponent},
-    {name: 'Recipe', path: '/recipe/:id', component: RecipeComponent}
+    {name: 'Recipe', path: '/recipe/:id/...', component: RecipeComponent}
 ])
 export class AppComponent {
     

@@ -1,10 +1,18 @@
 import {Component} from 'angular2/core';
-import {OnActivate, ComponentInstruction, RouteParams} from 'angular2/router';
+import {OnActivate, ComponentInstruction, RouteParams, RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
+
+import {RecipeDetailsComponent} from './recipe-details.component';
+import {RecipeEditComponent} from './recipe-edit.component';
 
 @Component({
     moduleId: module.id,
-    templateUrl : 'recipe.component.html'
+    templateUrl : 'recipe.component.html',
+    directives: [ROUTER_DIRECTIVES]
 })
+@RouteConfig([
+    {name: 'Details', path:'/', component: RecipeDetailsComponent, useAsDefault : true},
+    {name: 'Edit', path:'/edit', component: RecipeEditComponent}
+])
 export class RecipeComponent{
     
     constructor(private routeParams: RouteParams){
