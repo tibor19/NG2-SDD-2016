@@ -1,0 +1,12 @@
+<h2>{{title}}</h2>
+<div class="box" *ngFor="let recipe of recipes; let odd = odd; let even = even"> 
+  <a [routerLink]="['Recipe', {id: recipe.recipeId}, 'Details']">
+    <div class="box-content" [ngClass]="{'float-right': even, 'float-left': odd}">
+      <h2>{{recipe.dayOfWeek}}</h2>
+      <h4>{{recipe.name}}</h4>
+    </div>
+    <div class="box-image" [ngClass]="{'float-left': even, 'float-right': odd}">
+      <img [src]="recipe.image | image" width="200" height="120" [alt]="recipe.name">
+    </div>
+  </a>
+</div>

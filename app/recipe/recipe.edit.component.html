@@ -1,0 +1,22 @@
+<h3>Edit</h3>
+
+<div class="box">
+    <div class="box-content float-right">
+        <form id=formId (ngSubmit)="submitMethod()" #refForm="ngForm">
+            <table>
+                <tr>
+                    <td class="style_bold">Price:</td>
+                    <td><input [(ngModel)] = "recipe.price"></td>
+                </tr>
+                <tr>
+                    <td class="style_bold">Cooking Time:</td>
+                    <td><input [(ngModel)] = "recipe.time"> minutes</td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <div class="box-image float-left">
+        <img class="recipe-image" [src]="recipe.image | image" [alt]="recipe.name" />
+    </div>
+</div>
+<button (click)="save()">Save</button> <button (click)="cancel()">Cancel</button>
