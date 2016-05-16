@@ -1,0 +1,230 @@
+﻿body, header, footer, nav, .container, .content {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+body {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    font-size: 0.8em;
+    background-image: url("/content/images/bg-spaghetti.jpg");
+    background-repeat: repeat;
+    background-attachment: scroll;
+}
+
+header {
+    text-align: center;
+    width: 600px;
+    padding: 10px;
+    border: 1px dotted #725972;
+    background-image: url('data:image/gif;base64,R0lGODlhUABQAIAAAMeux9i/2CH5BAAAAAAALAAAAABQAFAAAALmjI8ZoO0PI2Ky2ovzpbpj7oViyJTLaZrj2qQnC8fyTNf2jef6Lrs+CgTxhsQPifcrKh1C407YXC6jFioNKs0erBJuL6jVeg2/MngcTlcrUTT5qi6i2xt4fDhv1WfuOyuv0NcXkeSHA5ggaGeYY+b4wrbIGDao96CyZ4g5NVIZOZnmmSgJKiU6UZrq8ciq6voKGys7SwtaWIub+bbWepurhLW2+pvlC3EKSRyLjKxseuQ82Zt8KQcWLTzaZY3dQbcN7dSd8U0o4tnsXH7MdOauO56NCj5MHm8/7RIOf+8t3d/pH8AEBQAAOw==') /*/content/Images/masthead.gif*/;
+    background-repeat: repeat;
+    background-attachment: scroll;
+}
+
+footer {
+    text-align: center;
+    clear: both;
+    width: 618px;
+    border: 1px dotted #d8bfd8;
+}
+
+a {
+    color: #402640;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #dfb8df;
+    text-decoration: underline;
+}
+
+nav {
+    position: relative;
+    float: left;
+    width: 139px;
+    margin: 10px 0 10px 0;
+    border-right: 1px dotted #725972;
+}
+
+article {
+    float: left;
+    width: 470px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+
+/* Navigation Styles */
+nav ul {
+    list-style-type: none;
+    width: 100%;
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    display: block;
+    margin: 0;
+    padding: 0;
+    border: 1px dotted #dfb8df;
+    background-color: #dfb8df;
+}
+
+nav a {
+    color: #402640;
+    text-decoration: none;
+    display: block;
+    padding: 5px;
+    border-bottom: 1px dotted #fff;
+    background-color: #dfb8df;
+}
+
+nav a:hover {
+    color: #402640;
+    text-decoration: none;
+    background-color: #fff;
+}
+
+/* Footer Styles */
+footer p {
+    color: #808080;
+}
+
+footer a {
+    color: #503750;
+    text-decoration: underline;
+}
+
+footer a:hover {
+    color: #402640;
+    text-decoration: none;
+}
+
+.splash {
+    text-align: center;
+    margin: 10% 0 0 0;
+    box-sizing: border-box;
+}
+
+.splash .message {
+    font-size: 72px;
+    line-height: 72px;
+    text-shadow: rgba(0, 0, 0, 0.5) 0 0 15px;
+    text-transform: uppercase;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.splash .fa-spinner {
+    text-align: center;
+    display: inline-block;
+    font-size: 72px;
+    margin-top: 50px;
+}
+
+.container {
+    width: 620px;
+    margin: 0 auto;
+    padding: 10px;
+    border-right: 2px solid #725972;
+    border-bottom: 2px solid #725972;
+    border-left: 2px solid #725972;
+    background-color: #fff;
+    margin-top: 10px;
+}
+
+/* Masthead Styles */
+.masthead h1 {
+    color: #fff;
+}
+
+.masthead h3 {
+    color: #402640;
+}
+
+/* content Styles */
+.content h1, h2, h3, h4, h5, h6 {
+    color: #503750;
+}
+
+.content img {
+    padding: 5px;
+    border: 1px solid #402640;
+}
+
+.font-bold {
+    font-weight: bold;
+}
+
+.font-italic {
+    font-style: italic;
+}
+
+.float-right {
+    float: right;
+}
+
+.float-left {
+    float: left;
+}
+
+/* other styles */
+.box {
+    border: thin dashed #C0C0C0;
+    width: 460px;
+    margin-bottom: 10px;
+    height: 160px;
+}
+
+.big-box {
+    border: thin dashed #C0C0C0;
+    width: 430px;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.box-image {
+    width: 210px;
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.box-content {
+    width: 220px;
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.recipe-image {
+    height:130px;
+    width:200px;
+    border:1px solid Black;
+}
+
+.recipe-list {
+    margin-left: 0;
+}
+
+.recipe-list li {
+    /*display: inline;*/
+    float: left;
+    margin-bottom: 15px;
+    margin-right: 15px;
+    border: thin dashed #C0C0C0;
+    padding: 5px;
+    width: 200px;
+}
+
+.ingredients-list{
+    list-style-type:none;
+    margin:5px;
+}
+
+.instructions-list {
+    list-style-type:decimal;
+    margin:15px;
+}
+
