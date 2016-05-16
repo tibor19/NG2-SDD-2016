@@ -2,13 +2,13 @@
 
     <h2>{{title}}</h2>
     
-    <div class="box" *ngFor="let recipe of recipes">
+    <div class="box" *ngFor="let recipe of recipes; let index = index; let odd = odd; let even = even">
         <a href="#/recipe/{{recipe.recipeId}}">
-            <div class="box-content float-right">
-                <h2>{{recipe.dayOfWeek}}</h2>
+            <div class="box-content" [ngClass]="{'float-right':even, 'float-left':odd}">
+                <h2>{{daysOfWeek[index % daysOfWeek.length]}}</h2>
                 <h4>{{recipe.name}}</h4>
             </div>
-            <div class="box-image float-left">
+            <div class="box-image" [class.float-right]="odd" [class.float-left]="even" >
                 <img src="content/images/food/{{recipe.image}}.jpg" width="200" height="120" alt="Recipe Image">
             </div>
         </a>

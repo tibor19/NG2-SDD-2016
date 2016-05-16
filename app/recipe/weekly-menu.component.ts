@@ -20,7 +20,7 @@ export class WeeklyMenuComponent {
     
     title : string = 'Weekly menu';
     
-    recipes : IRecipe[] = ([{
+    recipes : IRecipe[] = [{
             "recipeId": 1,
             "name": "Fish sticks and Rice",
             "price": 2.0,
@@ -38,8 +38,10 @@ export class WeeklyMenuComponent {
             "price": 3.0,
             "time": 11,
             "image": "pasta-clip"
-        }]).map((r: IRecipe, i: number) => {
-            r.dayOfWeek = this.daysOfWeek[i%this.daysOfWeek.length]; 
-            return r;
-        });
+        }];
+
+//         ).map((r: IRecipe, i: number) => {
+//             r.dayOfWeek = this.daysOfWeek[i%this.daysOfWeek.length]; 
+//             return r;
+//         })
 }
