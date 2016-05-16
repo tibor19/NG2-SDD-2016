@@ -9,7 +9,7 @@
                 <h4>{{recipe.name}}</h4>
             </div>
             <div class="box-image" [class.float-right]="odd" [class.float-left]="even" >
-                <img src="{{recipe.image | image}}" width="200" height="120" alt="Recipe Image">
+                <img [src]="recipe.image | image" width="200" height="120" alt="Recipe Image">
             </div>
         </a>
     </div>
