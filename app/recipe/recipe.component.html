@@ -1,5 +1,5 @@
-<h2>{{recipe.name}}</h2>
+<h2 *ngIf="recipe">{{recipe.name}}</h2>
 
 <router-outlet></router-outlet>
 
-<button (click)="goBack()">Back to list</button>
+

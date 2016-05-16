@@ -6,7 +6,8 @@ import {RecipeDetailsComponent} from './recipe.details.component';
 import {RecipeEditComponent} from './recipe.edit.component';
 
 @Component({
-    templateUrl : './app/recipe/recipe.component.html',
+    moduleId: module.id,
+    templateUrl : 'recipe.component.html',
     directives: [ROUTER_DIRECTIVES]
 })
 @RouteConfig([
@@ -34,15 +35,15 @@ export class RecipeComponent implements OnActivate, CanReuse {
         if(recipeId == -1){
             recipeId = 1 + Math.floor(Math.random() * 8);
         }
-        this.recipe = this.recipeService.getRecipe(recipeId);
-        nextInstruction.routeData['recipe'] = this.recipe;
+        return this.recipeService.getRecipe(recipeId).toPromise()
+        .then(recipe => {
+            this.recipe = recipe;
+            nextInstruction.routeData['recipe'] = this.recipe;
+            return this.recipe;
+        });
     }
     
     routerCanReuse(nextInstruction: ComponentInstruction, prevInstruction: ComponentInstruction){
         return +nextInstruction.params['id'] != -1;
-    }
-    
-    goBack(){
-        this.router.navigate(['WeeklyMenu']);
     }
 }

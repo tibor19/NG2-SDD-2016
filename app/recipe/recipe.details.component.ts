@@ -1,4 +1,4 @@
-import {Component} from 'angular2/core';
+import {Component, Output, EventEmitter} from 'angular2/core';
 import {Router, ComponentInstruction} from 'angular2/router';
 import {IRecipe} from './recipe.service';
 
@@ -7,6 +7,7 @@ import {IRecipe} from './recipe.service';
 })
 export class RecipeDetailsComponent {
  
+    @Output() back = new EventEmitter();
     recipe : IRecipe;
     constructor(private router: Router) {
         
@@ -18,5 +19,9 @@ export class RecipeDetailsComponent {
     
     edit(){
         this.router.navigate(['Edit']);
+    }
+    
+    goBack(){
+        this.router.navigate(['../../WeeklyMenu']);
     }
 }
