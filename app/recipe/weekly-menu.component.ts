@@ -1,4 +1,5 @@
 import {Component} from 'angular2/core';
+import {ImagePipeTransform} from '../pipes/ImagePipeTransform';
 
 interface IRecipe{
     recipeId : number;
@@ -12,7 +13,8 @@ interface IRecipe{
 @Component({
     moduleId: module.id,
     selector: 'weekly-menu',
-    templateUrl: 'weekly-menu.component.html'    
+    templateUrl: 'weekly-menu.component.html',
+    pipes: [ImagePipeTransform]    
 })
 export class WeeklyMenuComponent {
     
