@@ -5,7 +5,7 @@
     <div class="box" *ngFor="let recipe of recipes">
         <a href="#/recipe/{{recipe.recipeId}}">
             <div class="box-content float-right">
-                <h2>Monday</h2>
+                <h2>{{recipe.dayOfWeek}}</h2>
                 <h4>{{recipe.name}}</h4>
             </div>
             <div class="box-image float-left">
