@@ -1,63 +1,15 @@
 <article>
 
-    <h2>Weekly Menu</h2>
-
-    <div class="box">
-        <a href="#/recipe/1">
+    <h2>{{title}}</h2>
+    
+    <div class="box" *ngFor="let recipe of recipes">
+        <a href="#/recipe/{{recipe.recipeId}}">
             <div class="box-content float-right">
                 <h2>Monday</h2>
-                <h4>Fish sticks and Rice</h4>
+                <h4>{{recipe.name}}</h4>
             </div>
             <div class="box-image float-left">
-                <img src="content/images/food/fishsticks-mine.jpg" width="200" height="120" alt="Recipe Image">
-            </div>
-        </a>
-    </div>
-
-    <div class="box">
-        <a href="#/recipe/2">
-            <div class="box-content float-left">
-                <h2>Tuesday</h2>
-                <h4>Pizza</h4>
-            </div>
-            <div class="box-image float-right">
-                <img src="content/images/food/pizza-clip.jpg" width="200" height="120" alt="Recipe Image">
-            </div>
-        </a>
-    </div>
-
-    <div class="box">
-        <a href="#/recipe/3">
-            <div class="box-content float-right">
-                <h2>Wednesday</h2>
-                <h4>Pasta with Meatsauce</h4>
-            </div>
-            <div class="box-image float-left">
-                <img src="content/images/food/pasta-clip.jpg" width="200" height="120" alt="Recipe Image">
-            </div>
-        </a>
-    </div>
-
-    <div class="box">
-        <a href="#/recipe/4">
-            <div class="box-content float-left">
-                <h2>Thursday</h2>
-                <h4>Cereal with Millk</h4>
-            </div>
-            <div class="box-image float-right">
-                <img src="content/images/food/cereal-clip.jpg" width="200" height="120" alt="Recipe Image">
-            </div>
-        </a>
-    </div>
-
-    <div class="box">
-        <a href="#/recipe/5">
-            <div class="box-content float-right">
-                <h2>Friday</h2>
-                <h4>Meatballs and Mashed Potatoes</h4>
-            </div>
-            <div class="box-image float-left">
-                <img src="content/images/food/meatballs-clip.jpg" width="200" height="120" alt="Recipe Image">
+                <img src="content/images/food/{{recipe.image}}.jpg" width="200" height="120" alt="Recipe Image">
             </div>
         </a>
     </div>
