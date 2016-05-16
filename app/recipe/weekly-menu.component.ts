@@ -22,7 +22,8 @@ export class WeeklyMenuComponent implements OnActivate {
     
     routerOnActivate(nextInstruction : ComponentInstruction, prevInstruction: ComponentInstruction){
         
-        this.recipes = this.recipeService.getRecipes();
+        return this.recipeService.getRecipes().
+            subscribe(recipes => this.recipes = recipes);
         //         ).map((r: IRecipe, i: number) => {
         //             r.dayOfWeek = this.daysOfWeek[i%this.daysOfWeek.length]; 
         //             return r;

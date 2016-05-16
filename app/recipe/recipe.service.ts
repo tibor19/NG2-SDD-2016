@@ -1,3 +1,8 @@
+import {Injectable} from 'angular2/core';
+import {Http, Response} from 'angular2/http';
+
+import {Observable} from 'rxjs';
+
 export interface IRecipe {
     recipeId: number;
     name: string;
@@ -7,33 +12,15 @@ export interface IRecipe {
     dayOfWeek?: string;
 }
 
+@Injectable()
 export class RecipeService {
+    
+    constructor(private http: Http){
+        
+    }
 
-    getRecipes(): IRecipe[] {
-        return [{
-            "recipeId": 1,
-            "name": "Fish sticks and Rice",
-            "price": 2.0,
-            "time": 20,
-            "image": "fishsticks-mine"
-        }, {
-                "recipeId": 2,
-                "name": "Pizza",
-                "price": 13.0,
-                "time": 30,
-                "image": "pizza-clip"
-            }, {
-                "recipeId": 3,
-                "name": "Pasta with Meatsauce",
-                "price": 3.0,
-                "time": 11,
-                "image": "pasta-clip"
-            }, {
-                "recipeId": 4,
-                "name": "Cereal with Millk",
-                "price": 1.0,
-                "time": 1,
-                "image": "cereal-clip"
-            }];
+    getRecipes(): Observable<IRecipe[]> {
+        return this.http.get('/Artifacts/data/recipies.json')
+            .map(r => r.json());
     }
 }
