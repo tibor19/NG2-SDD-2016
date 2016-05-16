@@ -19,8 +19,8 @@ export class RecipeService {
         
     }
 
-    getRecipes(): Observable<IRecipe[]> {
+    getRecipes(): Promise<IRecipe[]> {
         return this.http.get('/Artifacts/data/recipies.json')
-            .map(r => r.json());
+            .map(r => r.json()).toPromise();
     }
 }
